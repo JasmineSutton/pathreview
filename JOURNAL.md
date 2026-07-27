@@ -35,3 +35,34 @@ POST /profiles uses multipart form data, not JSON.
 POST /reviews uses JSON with profile_id.
 Login expects OAuth2 form fields username and password.
 Mark auth requirements clearly for protected endpoints.
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+Updated the API reference in docs/API.md to document the request bodies for POST /profiles and POST /reviews, including the multipart form fields for profile creation and the JSON payload for review creation. I also verified the implementation details against the actual route handlers so the documentation matches the real API behavior.
+
+**Next steps:**
+Add a focused regression test for the API contract and run the relevant test command to confirm the documentation change is backed by executable validation.
+
+**Blockers:**
+The wider unit test suite still has unrelated existing failures, so I’m keeping the validation focused on the endpoint contract relevant to this issue.
+
+---
+
+### Check-in 2 (end of week)
+
+**PR link:** [TBD — not submitted yet]
+
+**Branch:** [JasmineSutton/enhancement/89-API-Documentation-Update]
+
+**What you built:**
+Updated the API reference in docs/API.md so users can see the request body format for both POST /profiles and POST /reviews. The profile documentation now explains the multipart/form-data fields used by the implementation, and the review documentation now includes the JSON payload schema with the required profile_id field. I also clarified that these protected endpoints require Bearer authentication.
+
+**Tests added or updated:**
+Added a focused API contract test in tests/unit/test_api_contract.py to verify that FastAPI exposes request bodies for the documented endpoints. I ran pytest tests/unit/test_api_contract.py -v, and the new test passed.
+
+**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
+
+**Draft PR feedback received from:** [none]
