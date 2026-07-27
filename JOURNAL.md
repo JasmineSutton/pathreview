@@ -20,12 +20,12 @@ The proper fix for this issue would be including the schema for POST /profiles a
 
 ## Week 8 — Reproduction & solution planning
 
-**Reproduction commit link:** [link to commit documenting the reproduced issue]
+**Reproduction commit link:** https://github.com/JasmineSutton/pathreview/blob/enhancement/89-API-Documentation-Update/REPRO.md
 
 **Reproduction summary:**
 I reproduced issue #89 by comparing API.md to the implemented routes and schemas in the API code. I confirmed that request body documentation is missing for POST /profiles and POST /reviews, which makes the API contract incomplete for consumers. I also confirmed related documentation gaps: missing POST /profiles multipart form details (github_username, portfolio_url, optional resume_file), missing POST /reviews request schema (profile_id UUID), and missing mention that profiles/reviews routes require Bearer authentication.
 
-**PLAN.md link:** [link to PLAN.md in your fork]
+**PLAN.md link:** [[link to PLAN.md]](https://github.com/JasmineSutton/pathreview/blob/enhancement/89-API-Documentation-Update/PLAN.md)
 
 **Walkthrough video (recommended):** [link to your Loom video, ≤2 min — shared for early feedback]
 
