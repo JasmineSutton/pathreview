@@ -66,3 +66,33 @@ Added a focused API contract test in tests/unit/test_api_contract.py to verify t
 **Self-review confirmation:** [ ] make check passes  [x] make test-unit passes
 
 **Draft PR feedback received from:** [none]
+
+## Week 10 - Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [x] No - still awaiting review
+
+**Summary of feedback:**
+No reviewer feedback was provided in Summer 2026. I checked my open PR and documented the status here as required.
+
+**How you responded:**
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+The hardest part was translating code behavior into documentation that is both precise and useful. At first glance the issue looked simple, but validating the exact request contract took careful tracing across routes, schemas, and auth behavior. The tricky detail was making sure I did not imply JSON where the endpoint actually expects multipart/form-data, and confirming that protected endpoints were clearly marked.
+
+**What did you learn about working in a large codebase?**
+I learned that correctness depends on cross-checking multiple layers instead of trusting a single file. In a larger codebase, route handlers, schema definitions, middleware, and docs each carry part of the API contract. Contributing to production-style code is less about writing lots of new code and more about reducing ambiguity so future contributors and users can rely on what is documented.
+
+**How did AI tools help - and where did they fall short?**
+AI tools helped most with fast orientation: finding related files, summarizing endpoint flow, and drafting structured documentation language. They fell short on source-of-truth accuracy unless I verified each claim against the repository. I still had to manually confirm request formats, auth expectations, and test scope because plausible suggestions were not always exact for this specific project state.
+
+**What would you do differently if you started over?**
+I would create a verification checklist earlier (endpoint, payload type, required fields, auth, example request) and use it before writing any docs text. I would also add the focused contract test earlier in the process so documentation updates and validation moved together from day one. That would have reduced backtracking and increased confidence sooner.
+
+**What are you most proud of from this module?**
+I am most proud of treating a documentation issue as an engineering quality task rather than a wording task. I left the API docs more reliable for users, and I backed that improvement with a targeted test to keep the contract visible and verifiable over time.
